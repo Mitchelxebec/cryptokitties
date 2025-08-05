@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="./assets/coin.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play GangGang Slot | Free CryptoKitties</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="overlay"></div>
+    <div class="modal-box">
+        <p>
+            Hooray Points claimed!
+        </p>
+    </div>
+
+    <header>
+        <div class="nav-wrapper">
+            <button id="hamburger"> &#9776;</button>
+            <h1>GANGGANG SLOTS</h1>
+            <nav id="side-menu">
+                <button id="close">&times;</button>
+                <ul id="menu">
+                    <li class="active"><a href="#">HOME</a></li>
+                    <li><a href="#leaderboard">LEADERBOARD</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <button id="wallet-btn">CONNECT WALLET</button>
+    </header>
+
+    <main>
+        <section class="welcome">
+            <div class="first-cat">
+                <img src="./assets/mid-high-lvl-cat-1.png" alt="first cat">
+            </div>
+            <div class="second-cat">
+                <img src="./assets/mid-lvl-cat-2.png" alt="second cat">
+            </div>
+            <h1>WELCOME!</h1>
+            <p class="subtitle">
+                <b>
+                    Page's gang is feeling lucky... are you?? Spin <span class="sub-span">now, purr later 🐾</span>
+                    Play from July 15th to July 31th!
+                </b>
+            </p>
+        </section>
+
+        <section class="instruction-section">
+            <div class="balance-section">
+                <h2>GANGGANG SLOTS</h2>
+                <p>BALANCE
+                    <span class="img-span"><img src="./assets/coin.png" alt="coin"></span>
+                    <span id="amount">0.00</span>
+                </p>
+            </div>
+            <button id="claim-btn" class="claim">Claim</button>
+        </section>
+
+        <section class="game-info">
+            <div class="game-overlay">
+                <div class="instructions">
+                    <div class="to-win-play">
+                        <div class="to-win">
+                            <h3 class="label">How to Win</h3>
+                        </div>
+                        <div class="to-play">
+                            <h3 class="label">How to Play</h3>
+                            <ol>
+                                <li>CONNECT YOUR WALLET</li>
+                                <li>CLAIM YOUR DAILY FREE CREDIT</li>
+                                <li>PLACE FREE BET</li>
+                                <li>SPIN</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <button class="instruct-button">CONNECT WALLET</button>
+                </div>
+
+                <div class="game-grid">
+                    <img src="./assets/mid-high-lvl-cat-1.png" alt="first cat">
+                    <img src="./assets/mid-high-lvl-cat-1.png" alt="first cat">
+                    <img src="./assets/mid-high-lvl-cat-1.png" alt="first cat">
+                    <img src="./assets/mid-high-lvl-cat-1.png" alt="first cat">
+                    <img src="./assets/mid-high-lvl-cat-1.png" alt="first cat">
+                    <img src="./assets/mid-high-lvl-cat-1.png" alt="first cat">
+                </div>
+            </div>
+        </section>
+
+        <section class="leaderboard-section">
+            <div class="third-cat">
+                <img src="./assets/mid-lvl-cat-2.png" alt="forth cat">
+            </div>
+            <div class="forth-cat">
+                <img src="./assets/low-lvl-cat-1.png" alt="third cat">
+            </div>
+
+            <div class="game-features">
+                <button id="toggleFeatures">
+                    <h2>GAME FEATURES ▼</h2>
+                </button>
+                <div id="featuresContent" class="hidden">
+                    <div class="tables">
+                        <table class="first-table">
+                            <thead>
+                                <tr>
+                                    <th>SYMBOL</th>
+                                    <th>DESCRIPTION</th>
+                                    <th>
+                                        PAYOUT
+                                        <p>(3 OF A KIND)</p>
+                                    </th>
+                                    <th>
+                                        PAYOUT
+                                        <p>(4 OF A KIND)</p>
+                                    </th>
+                                    <th>
+                                        PAYOUT
+                                        <p>(5 OF A KIND)</p>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><img src="./assets/low-lvl-cat-1.png" alt="low level cat"></td>
+                                    <td>LOW VALUE</td>
+                                    <td>0.5X BET</td>
+                                    <td>1.0X BET</td>
+                                    <td>2.5X BET</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="./assets/low-lvl-cat-2.png" alt="low level cat"></td>
+                                    <td>LOW VALUE</td>
+                                    <td>0.5X BET</td>
+                                    <td>1.0X BET</td>
+                                    <td>2.5X BET</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="./assets/mid-lvl-cat-1.png" alt="mid level cat"></td>
+                                    <td>MEDIUM VALUE</td>
+                                    <td>0.7X BET</td>
+                                    <td>1.5X BET</td>
+                                    <td>4.0X BET</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="./assets/mid-lvl-cat-2.png" alt="mid level cat"></td>
+                                    <td>MEDIUM VALUE</td>
+                                    <td>0.8X BET</td>
+                                    <td>2.0X BET</td>
+                                    <td>5.0X BET</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="./assets/mid-high-lvl-cat-1.png" alt="mid-high cat"></td>
+                                    <td>MEDIUM HIGH VALUE</td>
+                                    <td>1.0X BET</td>
+                                    <td>2.5X BET</td>
+                                    <td>6.0X BET</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="./assets/high-value.png" alt="high value"></td>
+                                    <td>HIGH VALUE</td>
+                                    <td>5.0X BET</td>
+                                    <td>6.0X BET</td>
+                                    <td>12.0X BET</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="./assets/premium-lvl.png" alt="low level cat"></td>
+                                    <td>LOW PREMIUM</td>
+                                    <td>5.0X BET</td>
+                                    <td>20.0X BET</td>
+                                    <td>25.0X BET</td>
+                                </tr>
+                                <tr class="last-img">
+                                    <td><img src="./assets/rainbow-wild-tile.png" alt="rainbow wild"></td>
+                                    <td class="first-td">SUBSTITUTE ANY SYMBOL TO COMPLETE WINS</td>
+                                    <td class="last-td">No payout on it's own.</td>
+                                    <td class="last-td">No payout on it's own.</td>
+                                    <td class="last-td">No payout on it's own.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="second-table">
+                            <thead>
+                                <tr>
+                                    <th>WINNING PLAYS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><img src="./assets/winning-plays-1.png" alt="winning play 1"></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="./assets/winning-plays-2.png" alt="winning play 2"></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="./assets/winning-plays-3.png" alt="winning play 3"></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="./assets/winning-plays-4.png" alt="winning play 4"></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="./assets/winning-plays-5.png" alt="winning play 5"></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="./assets/winning-plays-6.png" alt="winning play 6"></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="./assets/winning-plays-7.png" alt="winning play 7"></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="./assets/winning-plays-8.png" alt="winning play 8"></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="./assets/winning-plays-9.png" alt="winning play 9"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="play-time">
+                        <p>* PLAY LINES ARE LEFT TO RIGHT AND RIGHT TO LEFT</p>
+                        <a href="#">*LEARN MORE GAME DETAILS</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="top-winners">
+                <h2>TOP WINNERS</h2>
+                <p>The more you win the higher you get!</p>
+            </div>
+            <div class="fifth-cat">
+                <img src="./assets/mid-high-lvl-cat-1.png" alt="fifth cat">
+            </div>
+
+
+            <div class="leaderboard" id="leaderboard">
+                <table>
+                    <h3>TOTAL WINNINGS LEADERBOARD</h3>
+                    <thead>
+                        <tr>
+                            <th>RANK</th>
+                            <th>PLAYER</th>
+                            <th>TOTAL WINNINGS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>🥇</td>
+                            <td>0x0000...0C32</td>
+                            <td><img src="./assets/coin.png" alt="coin">442057.64</td>
+                        </tr>
+                        <tr>
+                            <td>🥈</td>
+                            <td>0x0000...ZaD6</td>
+                            <td><img src="./assets/coin.png" alt="coin">399020.87</td>
+                        </tr>
+                        <tr>
+                            <td>🥉</td>
+                            <td>0x0000...9d1F</td>
+                            <td><img src="./assets/coin.png" alt="coin">380292.96</td>
+                        </tr>
+                        <tr>
+                            <td>#4</td>
+                            <td>0x0000...9d1F</td>
+                            <td><img src="./assets/coin.png" alt="coin">380292.96</td>
+                        </tr>
+                        <tr>
+                            <td>#5</td>
+                            <td>0x0000...9d1F</td>
+                            <td><img src="./assets/coin.png" alt="coin">380292.96</td>
+                        </tr>
+                        <tr>
+                            <td>#6</td>
+                            <td>0x0000...9d1F</td>
+                            <td><img src="./assets/coin.png" alt="coin">380292.96</td>
+                        </tr>
+                        <tr>
+                            <td>#7</td>
+                            <td>0x0000...9d1F</td>
+                            <td><img src="./assets/coin.png" alt="coin">380292.96</td>
+                        </tr>
+                        <tr>
+                            <td>#8</td>
+                            <td>0x0000...9d1F</td>
+                            <td><img src="./assets/coin.png" alt="coin">380292.96</td>
+                        </tr>
+                        <tr>
+                            <td>#9</td>
+                            <td>0x0000...9d1F</td>
+                            <td><img src="./assets/coin.png" alt="coin">380292.96</td>
+                        </tr>
+                        <tr>
+                            <td>#10</td>
+                            <td>0x0000...9d1F</td>
+                            <td><img src="./assets/coin.png" alt="coin">380292.96</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="refresh">
+                    <p>
+                        REFRESHES EVERY 15 MINUTES
+                    </p>
+                    <p id="refresh">
+                        
+                    </p>
+                </div>
+                <div class="sixth-cat">
+                    <img src="./assets/mid-lvl-cat-1.png" alt="sixth cat">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="faq">
+        <section class="zen">
+            <img src="./assets/image 3.png" alt="cryptokitties">
+            <div class="zen-list">
+                <ul>
+                    <li>PLAY ALL THE ZEN</li>
+                    <li>CryptoKitties.co</li>
+                    <li>Terms of Service</li>
+                    <li class="special-li">Privacy Policy</li>
+                </ul>
+            </div>
+        </section>
+        <div class="creator">
+            <small>CREATED BY <span>MCAP</span></small>
+            <small>.POWERED BY <span>FLOW</span></small>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

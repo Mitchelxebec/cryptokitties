@@ -1,0 +1,981 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-image: linear-gradient(to bottom, rgb(255, 200, 238), rgb(255, 238, 250), rgb(255, 245, 245));
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+/* Overlay */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 50, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 999;
+}
+
+#overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-box {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff69b4;
+    color: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    opacity: 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: left 0.3s ease;
+    width: auto;
+    max-width: 90%;
+    z-index: 1005;
+}
+
+.open {
+    top: 30px;
+    opacity: 1;
+}
+
+header {
+    background-color: rgb(255, 254, 254);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    box-shadow: 0 0 5px #000;
+    width: 100%;
+    background: white;
+    z-index: 1004;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 40px;
+}
+
+header h1,
+h2,
+h3,
+h4 {
+    color: white;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black
+}
+
+#hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+#close {
+    display: none;
+}
+
+nav ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+nav li {
+    display: inline;
+    margin-right: 15px;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.active {
+    border-bottom: 4px solid rgb(250, 99, 125);
+    transition: all 0.3s ease;
+}
+
+#wallet-btn {
+    background-color: #ff5fa2;
+    font-size: 1rem;
+    padding: 10px 15px;
+    border: 4px solid rgb(182, 28, 54);
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 0 3px #000;
+    font-weight: bolder;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+main {
+    width: 100%;
+    margin-top: 60px;
+    padding: 20px;
+    position: relative;
+    z-index: auto;
+}
+
+/* Welcome Section */
+.welcome {
+    padding: 40px 20px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.first-cat {
+    position: absolute;
+    left: 20px;
+    top: 90px;
+}
+
+.second-cat {
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    font-size: 90px;
+    opacity: 0.3;
+}
+
+.welcome h1 {
+    color: white;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    margin-bottom: 10px;
+    font-size: 26px;
+}
+
+.welcome p {
+    font-size: 16px;
+    font-weight: bold;
+    max-width: 520px;
+    line-height: 1.6;
+    margin: 0 auto;
+}
+
+/* Instruction Section */
+.instruction-section {
+    max-width: 1200px;
+    background-color: rgb(230, 230, 230);
+    padding: 20px;
+    border-radius: 20px 20px 0 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.balance-section {
+    margin-left: 290px;
+}
+
+.balance-section h2,
+.balance-section p {
+    margin: 0;
+    text-align: center;
+    color: white;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    padding: 5px;
+}
+
+.img-span {
+    vertical-align: middle;
+}
+
+.claim {
+    background-color: #2e6fe9;
+    font-size: 15px;
+    height: 50px;
+    max-width: 100px;
+    width: 30%;
+    border: 4px solid rgb(28, 95, 182);
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 0 3px #000;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.claim:hover {
+    background-color: #062c74;
+}
+
+/* Game Info Section */
+.game-info {
+    max-width: 1200px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 30px;
+    margin: 0 auto;
+    position: relative;
+    padding: 40px 20px;
+    padding-bottom: 99px;
+    backdrop-filter: blur(10px);
+    border: 20px solid transparent;
+    border-image: linear-gradient(to right, #f87171, #facc15, #34d399, #60a5fa, #a78bfa) 1;
+    background-color: #fdfdfd;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.game-overlay {
+    position: relative;
+}
+
+.instructions {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    padding: 20px;
+    border-radius: 12px;
+    width: 750px;
+    text-align: center;
+    align-self: center;
+}
+
+.to-win-play {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 10px;
+}
+
+.label {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 10px;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    color: white;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+
+.to-win,
+.to-play {
+    position: relative;
+    flex: 1 1 48%;
+    background-color: #fdfdfd;
+    padding: 30px 10px 10px;
+    border: 3px solid transparent;
+    border-image: linear-gradient(to right, #f87171, #facc15, #34d399, #60a5fa, #a78bfa) 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.to-win {
+    background-image: url('./assets/winning-plays-1.png');
+    height: 200px;
+    width: 100%;
+    animation: change 20s infinite;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@keyframes change {
+    0% {
+        background-image: url('./assets/winning-plays-1.png');
+    }
+
+    10% {
+        background-image: url('./assets/winning-plays-2.png');
+    }
+
+    20% {
+        background-image: url('./assets/winning-plays-3.png');
+    }
+
+    30% {
+        background-image: url('./assets/winning-plays-4.png');
+    }
+
+    40% {
+        background-image: url('./assets/winning-plays-5.png');
+    }
+
+    50% {
+        background-image: url('./assets/winning-plays-6.png');
+    }
+
+    60% {
+        background-image: url('./assets/winning-plays-7.png');
+    }
+
+    80% {
+        background-image: url('./assets/winning-plays-8.png');
+    }
+
+    100% {
+        background-image: url('./assets/winning-plays-9.png');
+    }
+
+}
+
+.to-play {
+    padding-top: 0;
+    padding-left: 50px;
+    padding-bottom: 10px;
+}
+
+.to-play ol li {
+    text-align: start;
+    font-size: 14.5px;
+    font-weight: bold;
+    line-height: 1.9;
+}
+
+.instruct-button {
+    width: 100%;
+    background-color: #ff5fa2;
+    font-size: 12px;
+    padding: 10px 15px;
+    border: 4px solid rgb(182, 28, 54);
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 0 3px #000;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    opacity: 0.3;
+    gap: 20px;
+    max-width: 600px;
+    width: 100%;
+    justify-items: center;
+    z-index: 1;
+}
+
+.game-grid img {
+    width: 100%;
+    max-width: 100px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+/* LEADERBOARD SECTION */
+
+.leaderboard-section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.leaderboard-section {
+    text-align: center;
+    padding: 40px 10px;
+    position: relative;
+}
+
+.third-cat {
+    position: absolute;
+    left: -80px;
+    top: 20px;
+    opacity: 0.3;
+}
+
+.forth-cat {
+    position: absolute;
+    right: -50px;
+    top: 30px;
+    font-size: 90px;
+    opacity: 0.3;
+}
+
+.game-features {
+    background: linear-gradient(to right, #f3e5f5, #e1bee7);
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 30px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.game-features button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.hidden {
+    overflow-y: auto;
+    margin-top: 10px;
+    padding: 10px;
+    display: none;
+}
+
+.tables {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.hidden table {
+    background-color: #fbf6fc;
+    border-radius: 5px;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.hidden thead {
+    border-bottom: 2px solid black;
+}
+
+.hidden tr {
+    width: 100%;
+}
+
+.hidden th,
+.hidden td {
+    padding: 15px;
+    font-weight: bold;
+    font-size: 9px;
+}
+
+.first-table {
+    width: 60%;
+}
+
+.first-table img {
+    width: 50px;
+}
+
+.first-table th {
+    padding: 20px;
+}
+
+.second-table {
+    width: 40%;
+}
+
+.second-table th,
+.second-table td {
+    padding: 26px;
+}
+
+.drop-down {
+    display: block;
+    transition: all 1s ease;
+}
+
+.play-time {
+    font-weight: bold;
+    margin-top: 5px;
+    padding: 10px;
+    text-align: start;
+}
+
+.play-time a {
+    color: black;
+}
+
+.top-winners p {
+    margin-top: 10px;
+}
+
+.fifth-cat {
+    position: absolute;
+    left: 50px;
+    opacity: 0.3;
+}
+
+.leaderboard {
+    border-radius: 20px;
+    background-color: #ffe0b2;
+    padding: 20px;
+    max-width: 900px;
+    margin: 30px auto;
+    z-index: 1;
+}
+
+.leaderboard table {
+    border-collapse: collapse;
+    font-size: 14px;
+    width: 100%;
+    padding: 30px;
+}
+
+.leaderboard h3 {
+    padding: 20px;
+}
+
+.leaderboard th {
+    background-color: #ffa621;
+    border-top: 1px solid #b86e00;
+    font-size: 12px;
+}
+
+.leaderboard td {
+    padding: 10px 2px;
+    border-bottom: 1px solid #db8400;
+}
+
+.leaderboard td img {
+    width: 15px;
+    margin-right: 10px;
+}
+
+.leaderboard td:nth-child(1) {
+    font-weight: bold;
+    color: white;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black
+}
+
+.refresh {
+    padding: 20px;
+    font-weight: bold;
+    display: block;
+}
+
+.sixth-cat {
+    position: absolute;
+    right: 40px;
+    font-size: 90px;
+    opacity: 0.3;
+}
+
+footer {
+    width: 100%;
+    padding: 20px;
+}
+
+.zen {
+    max-width: 1200px;
+    margin: 20px auto;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-image: linear-gradient(to right, #f87171, #ff83ee, #ffa5f8, #fab760, #d738ff, #a78bfa, #60fad3) 1;
+    border-bottom: 5px solid;
+}
+
+.zen img {
+    height: auto;
+    width: 200px;
+}
+
+.zen-list ul {
+    margin-top: 50px;
+    display: flex;
+    gap: 30px;
+}
+
+.zen-list ul li:nth-child(1) {
+    list-style: none;
+}
+
+::marker {
+    color: rgb(255, 160, 176);
+}
+
+.zen-list li {
+    font-size: 12px;
+}
+
+.creator {
+    max-width: 1200px;
+    text-align: start;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.creator small {
+    font-weight: bold;
+    color: gray;
+    margin-right: 10px;
+}
+
+.creator small span {
+    color: #ff38ee;
+}
+
+/* --- Media Queries --- */
+/* Hide hamburger by default on large screens */
+@media (min-width: 768px) {
+    #hamburger {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        padding: 5px;
+    }
+
+    #side-menu {
+        display: flex;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    #menu {
+        display: flex;
+        gap: 10px;
+    }
+
+    #hamburger,
+    #close {
+        display: none;
+    }
+
+    .balance-section {
+        margin-left: 0px;
+    }
+
+    .instructions {
+        width: 650px;
+    }
+
+    .forth-cat {
+        left: 500px;
+    }
+}
+
+@media (max-width: 480px) {
+    * {
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+
+    .modal-box {
+        font-size: 15px;
+        padding: 16px 20px;
+        width: 90%;
+    }
+
+    .nav-wrapper {
+        gap: 20px;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1004;
+        flex-wrap: nowrap;
+        gap: 10px;
+        padding: 10px;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    h1 {
+        font-size: 14px;
+        max-width: 90%;
+        margin-top: 5px;
+    }
+
+    #wallet-btn {
+        font-size: 8px;
+        padding: 5px 5px;
+        margin-left: 10px;
+    }
+
+    #hamburger,
+    #close {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    #hamburger {
+        font-size: 15px;
+    }
+
+    #close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 2;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    #close:hover {
+        color: rgb(255, 143, 219);
+    }
+
+    #side-menu {
+        position: fixed;
+        top: 0;
+        left: -100vw;
+        width: 70vw;
+        height: 100vh;
+        background: #111;
+        color: white;
+        transition: left 0.3s ease;
+        z-index: 1002;
+        padding: 1rem;
+    }
+
+    #side-menu ul {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+    }
+
+    #side-menu li {
+        margin-bottom: 20px;
+        border-bottom: 1px solid pink;
+        padding-bottom: 5px;
+    }
+
+    #side-menu a {
+        color: white;
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+
+    #side-menu li:hover {
+        color: rgb(255, 200, 238);
+    }
+
+    #side-menu.open {
+        left: 0;
+    }
+
+    .first-cat {
+        top: -3px;
+    }
+
+    .welcome h1 {
+        font-size: 16px;
+    }
+
+    .welcome p {
+        font-size: 10px;
+        max-width: 950px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        display: block;
+        line-height: 1.5;
+    }
+
+    .sub-span {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .instruction-section {
+        padding: 15px;
+    }
+
+    .balance-section {
+        margin-left: 0px;
+        width: 100%;
+    }
+
+    .balance-section h2,
+    .balance-section p {
+        font-size: 13px;
+        text-align: start;
+    }
+
+    .balance-section p {
+        font-size: 10px;
+    }
+
+    button.claim {
+        font-size: 8px;
+    }
+
+    .game-info {
+        padding-bottom: 220px;
+    }
+
+    .instructions {
+        width: 250px;
+    }
+
+    .to-win-play {
+        width: fit-content;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .to-win {
+        height: 450px;
+        padding: 50px 10px;
+    }
+
+    .to-play {
+        padding-top: 5px;
+    }
+
+    .to-play ol li {
+        text-align: start;
+        font-size: 10px;
+    }
+
+    .instruct-button {
+        width: 100%;
+        font-size: 10px;
+    }
+
+    .forth-cat {
+        left: 200px;
+    }
+
+    .game-features button {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .hidden {
+        flex-direction: column;
+    }
+
+    .hidden th,
+    .hidden td {
+        padding: 15px;
+        font-weight: bold;
+        font-size: 9px;
+    }
+
+    .second-table tbody {
+        display: flex;
+    }
+
+    .second-table th {
+        text-align: start;
+        margin-right: 50px;
+    }
+
+    .second-table td {
+        padding: 10px 3px;
+    }
+
+    .second-table img {
+        width: 50px;
+    }
+
+    .play-time {
+        font-size: 6.5px;
+    }
+
+    .top-winners p {
+        margin-top: 10px;
+        font-size: 13px;
+    }
+
+    .fifth-cat {
+        left: -50px;
+    }
+
+    .leaderboard h3 {
+        font-size: 10px;
+    }
+
+    .leaderboard th,
+    .leaderboard td {
+        font-size: 9px;
+    }
+
+    .refresh {
+        font-size: 10px;
+    }
+
+    .sixth-cat {
+        right: -20px;
+    }
+
+    footer {
+        margin: 0 auto;
+    }
+
+    .zen {
+        flex-direction: column;
+        border-image: linear-gradient(to right, #f87171, #ff83ee, #ffa5f8, #fab760, #d738ff, #a78bfa, #60fad3) 1;
+        border-top: 5px solid;
+        padding: 3px;
+        margin: 0 auto;
+        justify-self: center;
+        justify-content: center;
+    }
+
+    .zen img {
+        width: 100px;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+
+    .zen-list {
+        width: 100%;
+        text-align: center;
+    }
+
+    .zen-list ul {
+        text-align: center;
+        margin: 25px auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .zen-list li {
+        font-size: 9px;
+    }
+
+    .special-li {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .creator small {
+        font-size: 10px;
+    }
+}
