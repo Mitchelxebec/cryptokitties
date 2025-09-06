@@ -454,6 +454,7 @@ main {
 }
 
 .hidden table {
+    max-width: 1200px;
     background-color: #fbf6fc;
     border-radius: 5px;
     border-collapse: collapse;
@@ -875,8 +876,12 @@ footer {
         font-size: 12px;
     }
 
-    .hidden {
+    .tables {
         flex-direction: column;
+    }
+
+    .hidden table {
+        width: 100%;
     }
 
     .hidden th,
