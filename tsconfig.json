@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist",
+    
+    // Target modern browsers
+    "target": "ES2020",
+    "module": "ESNext",
+
+    // Only include browser/DOM types
+    "lib": ["DOM", "ES2020"],
+    "types": [],
+
+    // Strict type checking
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Output options
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Module handling
+    "isolatedModules": true,
+    "moduleDetection": "force",
+
+    // Skip type checks in libraries for faster compilation
+    "skipLibCheck": true,
+    "verbatimModuleSyntax": true
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
